@@ -86,7 +86,6 @@ export const navItems = [
     url: "/",
     label: "Home",
   },
-
   {
     url: "/about",
     label: "About",
