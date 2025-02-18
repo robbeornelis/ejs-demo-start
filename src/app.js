@@ -2,6 +2,8 @@
 import express from "express";
 import path from "path";
 
+import { home, about, contact, privacy } from "./controllers/PageController.js";
+
 // create an instance of express
 const app = express();
 
@@ -13,11 +15,24 @@ app.set("views", path.resolve("src", "views"));
 // they can be accessed from the root of the site (e.g. /assets/images/dino_07.png) 🦕
 app.use(express.static("public"));
 
+//page routes
+app.get("/", home);
+app.get("/about", about);
+app.get("/contact", contact);
+app.get("/privacy", privacy);
+
 // GET route to serve the home.ejs file
 app.get("/", (req, res) => {
   res.render("home", {
     title: "Dinosaurs are awesome!",
     content: "Dinosaurs are a diverse group of reptiles of the clade Dinosaur",
+  });
+});
+
+app.get("/about", (req, res) => {
+  res.render("home", {
+    title: "About",
+    content: "this is a page about dinosaurs",
   });
 });
 
