@@ -12,36 +12,38 @@
 
 <body>
 
-    <h1>
-        <%= title %>
-    </h1>
+    <%- include('../partials/nav') %>
 
-    <nav>
-        <ul>
-            <% navItems.forEach(item=>{ %>
-                <li>
-                    <a href="<%= item.url %>">
-                        <%= item.label %>
-                    </a>
-                </li>
-                <% }) %>
-        </ul>
-    </nav>
-    <p>
-        <%= content %>
-    </p>
-    <hr>
-    <h3>
-        <%= person.firstname + " " + person.lastname %>
-    </h3>
-    <address>
-        <%= person.location.city + " " + person.location.country %>
-    </address>
+        <h1>
+            <%= title %>
+        </h1>
 
-    <hr>
+        <nav>
+            <ul>
+                <% navItems.forEach(item=>{ %>
+                    <li>
+                        <a href="<%= item.url %>">
+                            <%= item.label %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+        </nav>
+        <p>
+            <%= content %>
+        </p>
+        <hr>
+        <h3>
+            <%= person.firstname + " " + person.lastname %>
+        </h3>
+        <address>
+            <%= person.location.city + " " + person.location.country %>
+        </address>
+
+        <hr>
 
 
-    <footer></footer>
+        <%- include('../partials/footer') %>
 </body>
 
 </html>
