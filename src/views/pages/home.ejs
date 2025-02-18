@@ -11,12 +11,29 @@
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
-    <p>
-        <%= content %>
-    </p>
+
+    <%- include('../partials/nav') %>
+
+
+        <h1>
+            <%= title %>
+        </h1>
+        <nav>
+            <ul>
+                <% navItems.forEach(item=>{ %>
+                    <li>
+                        <a href="<%= item.url %>">
+                            <%= item.label %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+        </nav>
+
+        <p>
+            <%= message %>
+        </p>
+        <footer></footer>
 </body>
 
 </html>

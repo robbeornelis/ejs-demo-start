@@ -11,12 +11,37 @@
 </head>
 
 <body>
+
     <h1>
         <%= title %>
     </h1>
+
+    <nav>
+        <ul>
+            <% navItems.forEach(item=>{ %>
+                <li>
+                    <a href="<%= item.url %>">
+                        <%= item.label %>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+    </nav>
     <p>
-        <%= message %>
+        <%= content %>
     </p>
+    <hr>
+    <h3>
+        <%= person.firstname + " " + person.lastname %>
+    </h3>
+    <address>
+        <%= person.location.city + " " + person.location.country %>
+    </address>
+
+    <hr>
+
+
+    <footer></footer>
 </body>
 
 </html>

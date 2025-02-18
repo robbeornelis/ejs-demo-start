@@ -11,9 +11,24 @@
 </head>
 
 <body>
+
+
     <h1>
         <%= title %>
     </h1>
+
+    <nav>
+        <ul>
+            <% navItems.forEach(item=>{ %>
+                <li>
+                    <a href="<%= item.url %>">
+                        <%= item.label %>
+                    </a>
+                </li>
+                <% }) %>
+        </ul>
+    </nav>
+
     <p>
         <%= message %>
     </p>
@@ -29,6 +44,7 @@
         </ul>
         <% } %>
 
+            <footer></footer>
 </body>
 
 </html>
