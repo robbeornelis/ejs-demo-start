@@ -2,8 +2,10 @@
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import path from "path";
-import { home, about, contact, privacy } from "./controllers/PageController.js";
+import * as pages from "./controllers/PageController.js";
+import * as pages from "./controllers/DinoController.js";
 
+import helpers from "./utils/templatehelpers.js";
 // create an instance of express
 const app = express();
 
@@ -18,11 +20,19 @@ app.set("views", path.resolve("src", "views"));
 // they can be accessed from the root of the site (e.g. /assets/images/dino_07.png) 🦕
 app.use(express.static("public"));
 
+//Make the helpers available for to all views
+Object.assign(app.locals, helpers);
+
+app.use(express.static("public"));
 // page routes
-app.get("/", home);
-app.get("/about", about);
-app.get("/contact", contact);
-app.get("/privacy", privacy);
+app.get("/", pages.home);
+app.get("/about", pages.about);
+app.get("/contact", pages.contact);
+app.get("/privacy", pages.privacy);
+
+//dino routes
+app.get("/dinosaurs", dinosaurs.index);
+app.get("./dinosaurs/:slug", dinosaurs.detail);
 
 // 404 page
 app.get("*", (req, res) => {

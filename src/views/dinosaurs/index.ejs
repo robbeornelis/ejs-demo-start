@@ -1,0 +1,17 @@
+<h1>
+    <%= title %>
+</h1>
+<ul class="dinos">
+    <% dinosaurs.forEach((dino)=> { %>
+        <li class="<%= dino.isHerbivore ? " green" : "red" %>">
+            <p>
+                <% if(dino.isHerbivore) { __append("This dinosaur is a herbivore"); } else { __append("This dinosaur is
+                    a carnivore"); } %>
+            </p>
+            <a href="/dinosaurs/<%= dino.slug %>">
+                <%= dino.name %>
+            </a>
+            <img src="/assets/images/<%= dino.image %>" alt="<%= dino.name %>">
+        </li>
+        <% }); %>
+</ul>

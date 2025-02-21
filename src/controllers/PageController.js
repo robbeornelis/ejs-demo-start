@@ -3,7 +3,7 @@ import { person, navItems } from "../data/data.js";
 export const home = (req, res) => {
   res.render("pages/home", {
     title: "dinosaurs around the world",
-    message: "Welcome to the world of dinosaurs",
+    content: "Welcome to the world of dinosaurs",
     navItems,
   });
 };
@@ -33,7 +33,7 @@ export const contact = (req, res) => {
 
 export const privacy = (req, res) => {
   res.render("pages/default", {
-    title: "Privacy Police",
+    title: "Privacy Policy",
     message: "Dinosaurs are protective of their privacy",
     team: false,
     navItems,

@@ -5,15 +5,14 @@
     <%= message %>
 </p>
 <hr>
-<!-- deze is wel zichtbaar -->
-<% /* niemand weet dat ik repelsteeltje heet */ %>
-    <% if(team) { %>
-        <h3>Maak kennis met ons team:</h3>
-        <ul>
-            <% team.forEach(dino=> { %>
-                <li>
-                    <%- dino %>
-                </li>
-                <% }); %>
-        </ul>
-        <% } %>
+
+<% if(team) { %>
+    <h3>Maak kennis met ons team:</h3>
+    <ul>
+        <% team.forEach(dino=> { %>
+            <li>
+                <%- dino %>
+            </li>
+            <% }); %>
+    </ul>
+    <% } %>
